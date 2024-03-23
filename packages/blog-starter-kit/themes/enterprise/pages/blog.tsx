@@ -10,13 +10,12 @@ import { Button } from '../components/button';
 import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
-import { HeaderOrig } from '../components/header';
-import { Header } from '../components/header-home';
+import { Header } from '../components/header';
 import { HeroPost } from '../components/hero-post';
 import { ArticleSVG, ChevronDownSVG } from '../components/icons';
 import { Layout } from '../components/layout';
 import { MorePosts } from '../components/more-posts';
-import { Navbar } from '../components/navbar-home';
+import { Navbar } from '../components/navbar';
 import { SecondaryPost } from '../components/secondary-post';
 import {
 	MorePostsByPublicationDocument,
@@ -123,8 +122,6 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 				</Head>
 				<Header />
 				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10">
-					<img src="../public/assets/safeer-sh-banner-1.png" alt="Flowers in Chania"/>
-{/*
 					<Navbar />
 
 					{allPosts.length === 0 && (
@@ -152,7 +149,6 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 								/>
 							)}
 						</div>
-
 						<div className="col-span-1 flex flex-col gap-6">{secondaryPosts}</div>
 					</div>
 
@@ -185,7 +181,6 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 							)}
 						</>
 					)}
-*/}
 				</Container>
 				<Footer />
 			</Layout>

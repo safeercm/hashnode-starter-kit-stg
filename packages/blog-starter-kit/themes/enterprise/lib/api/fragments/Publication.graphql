@@ -27,6 +27,15 @@ fragment Publication on Publication {
 			type
 			label
 			url
+        		page { 
+			        id
+			        slug
+			        hidden
+		        }
+		        series {
+		        	  id
+			          slug
+		        }  
 		}
 	}
 	links {

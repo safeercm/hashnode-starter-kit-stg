@@ -5,7 +5,7 @@ import { Button } from './button';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import HamburgerSVG from './icons/svgs/HamburgerSVG';
-import { PublicationLogo } from './publication-logo';
+import { PublicationLogo } from './publication-logo-home';
 import PublicationSidebar from './sidebar';
 
 function hasUrl(
@@ -17,6 +17,7 @@ function hasUrl(
 function getHref(
 	navbarItem: PublicationNavbarItem,
 ): string {
+console.log(navbarItem)
 if ( navbarItem.type == 'link') {
  return navbarItem.url; }
 else if ( navbarItem.type == 'page') {
@@ -37,12 +38,11 @@ return "_self"; }
 
 export const Header = () => {
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '/';
-        const blogUrl = '/blog';
 	const [isSidebarVisible, setIsSidebarVisible] = useState<boolean>();
 	const { publication } = useAppContext();
 	const navbarItems = publication.preferences.navbarItems.filter(hasUrl);
-	const visibleItems = navbarItems.slice(0, 3);
-	const hiddenItems = navbarItems.slice(3);
+	const visibleItems = navbarItems.slice(0, 4);
+	const hiddenItems = navbarItems.slice(4);
 
 	const toggleSidebar = () => {
 		setIsSidebarVisible((prevVisibility) => !prevVisibility);
@@ -121,7 +121,6 @@ export const Header = () => {
 				</div>
 				<div className="col-span-2 flex flex-row items-center justify-end gap-5 text-slate-300 lg:col-span-3">
 					<nav className="hidden lg:block">{navList}</nav>
-                                        <Button href={blogUrl} as="a" type="primary" label="Blog" />
 				</div>
 			</Container>
 			<div className="mt-5 flex justify-center lg:hidden">
